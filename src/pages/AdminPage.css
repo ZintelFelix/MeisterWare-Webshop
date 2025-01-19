@@ -1,0 +1,155 @@
+/* Admin Page Styling */
+.admin-page {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.admin-page h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+/* Add Product Button */
+.add-product-container {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-bottom: 1rem;
+}
+
+.add-product-button {
+    background-color: #6200ea;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-product-button:hover {
+    background-color: #3700b3;
+}
+
+/* Product Table Styling */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-align: left;
+    border: 1px solid #ddd; /* Adds a light border around the table */
+}
+
+.product-table th,
+.product-table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd; /* Adds borders between cells */
+    text-align: center; /* Center-align the content */
+}
+
+.product-table th {
+    background-color: #6200ea;
+    color: white;
+    font-weight: bold;
+}
+
+.product-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row coloring */
+}
+
+.product-table tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Action Buttons in Table */
+.product-table button {
+    margin: 0 0.25rem;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    color: white;
+    background-color: #6200ea;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.product-table button:hover {
+    background-color: #3700b3;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    color: white;
+    background-color: #6200ea;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:hover {
+    background-color: #3700b3;
+}
+
+.modal-buttons button:last-child {
+    background-color: #f44336;
+}
+
+.modal-buttons button:last-child:hover {
+    background-color: #d32f2f;
+}
