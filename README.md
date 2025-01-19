@@ -1,50 +1,160 @@
-# React + TypeScript + Vite
+# **Produktverwaltungs-Anwendung**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dies ist eine einfache Webanwendung zur Verwaltung von Produkten. Die Anwendung bietet folgende Hauptfunktionen:
 
-Currently, two official plugins are available:
+- **Produkte anzeigen**: Produkte auf der Homepage anzeigen.
+- **Produkte hinzufügen und löschen**: Über die Admin-Seite verwalten.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dieses Projekt wurde als Teil einer Bewerbungsaufgabe erstellt und verwendet moderne Technologien wie **React**, **TypeScript**, **.NET 9**, und **SQLite**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## **Inhaltsverzeichnis**
+1. [Technologien](#technologien)
+2. [Features](#features)
+3. [Voraussetzungen](#voraussetzungen)
+4. [Installation und Ausführung](#installation-und-ausf%C3%BChrung)
+   - [Backend starten](#backend-starten)
+   - [Frontend starten](#frontend-starten)
+5. [Projekt testen](#projekt-testen)
+6. [Fehlerbehebung](#fehlerbehebung)
+---
 
-- Configure the top-level `parserOptions` property like this:
+## **Technologien**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Frontend**:
+  - React (mit TypeScript)
+  - Vite (für schnelles Frontend-Building)
+  - CSS für Styling
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Backend**:
+  - .NET 9 (ASP.NET Core Web API)
+  - Entity Framework Core (mit SQLite)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Datenbank**:
+  - SQLite (leichtgewichtig und einfach zu verwenden)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+## **Features**
+
+1. **Homepage**:
+   - Zeigt alle Produkte an.
+   - Zeigt eine Nachricht an, wenn keine Produkte verfügbar sind.
+
+2. **Admin-Seite**:
+   - Produkte können erstellt und gelöscht werden.
+
+3. **Datenbank-Persistenz**:
+   - Alle Produkte werden in einer SQLite-Datenbank gespeichert und bleiben auch nach einem Neustart des Backends erhalten.
+
+---
+
+## **Voraussetzungen**
+
+Stellen Sie sicher, dass die folgenden Tools installiert sind:
+
+1. **Node.js** (Version 16 oder höher)  
+   [Node.js herunterladen](https://nodejs.org/)
+
+2. **.NET SDK** (Version 6 oder höher)  
+   [.NET SDK herunterladen](https://dotnet.microsoft.com/download)
+
+3. **SQLite Database Viewer** (optional, um die Datenbank zu prüfen)  
+   [DB Browser for SQLite](https://sqlitebrowser.org/) herunterladen.
+
+---
+
+## **Installation und Ausführung**
+
+### **Backend starten**
+
+1. **In den Backend-Ordner wechseln**:
+   ```bash
+   cd backend/ProductApi
+   ```
+
+2. **Abhängigkeiten installieren**:
+   ```bash
+   dotnet restore
+   ```
+
+3. **Datenbank initialisieren**: Wenden Sie Migrations an und erstellen Sie die SQLite-Datenbank:
+   ```bash
+   dotnet ef migrations add InitialCreate
+   dotnet ef database update
+   ```
+
+4. **Backend starten**:
+   ```bash
+   dotnet run
+   ```
+
+   Der Server läuft jetzt auf [http://localhost:5254](http://localhost:5254).
+
+### **Frontend starten**
+
+1. **Abhängigkeiten installieren**:
+   ```bash
+   npm install
+   ```
+
+2. **Frontend starten**:
+   ```bash
+   npm run dev
+   ```
+
+   Die Anwendung ist jetzt auf [http://localhost:5173](http://localhost:5173) verfügbar.
+
+---
+
+## **Projekt testen**
+
+### **Homepage**
+
+- Öffnen Sie [http://localhost:5173](http://localhost:5173), um die verfügbaren Produkte anzuzeigen.
+- Wenn keine Produkte vorhanden sind, wird eine entsprechende Nachricht angezeigt.
+
+### **Admin-Seite**
+
+- Öffnen Sie [http://localhost:5173/admin](http://localhost:5173/admin), um:
+  - **Produkte hinzuzufügen**: Klicken Sie auf die Schaltfläche **+ Add Product**. Ein Popup-Formular erscheint.
+  - **Produkte zu bearbeiten**: (Noch in Bearbeitung.)
+  - **Produkte zu löschen**: Klicken Sie auf **Delete**, um ein Produkt aus der Datenbank zu entfernen.
+
+---
+
+## **Fehlerbehebung**
+
+### **Häufige Probleme**
+
+1. **Fehler bei `dotnet ef`-Befehlen**:
+   - Stellen Sie sicher, dass Entity Framework CLI installiert ist:
+     ```bash
+     dotnet tool install --global dotnet-ef
+     ```
+
+2. **CORS-Fehler**:
+   - Wenn Frontend-Anfragen blockiert werden, überprüfen Sie, ob CORS im Backend konfiguriert ist:
+     ```csharp
+     builder.Services.AddCors(options =>
+     {
+         options.AddDefaultPolicy(policy =>
+         {
+             policy.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+         });
+     });
+     app.UseCors();
+     ```
+
+3. **Port-Konflikte**:
+   - **Backend-Port (5254)**: Ändern Sie den Port in `launchSettings.json`.
+   - **Frontend-Port (5173)**: Ändern Sie den Port in `vite.config.js`.
+
+4. **Datenbankprobleme**:
+   - Wenn die Tabelle `Products` bereits existiert, löschen Sie die Datenbank `products.db` und führen Sie den folgenden Befehl aus:
+     ```bash
+     dotnet ef database update
+     ```
