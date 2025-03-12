@@ -1,22 +1,18 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "./NavBar.css";
 
 const Navbar = () => {
-    const location = useLocation();
     const navigate = useNavigate();
+    const { cart } = useCart();
 
     return (
         <nav className="navbar">
-            <div className="navbar-title">WebShop</div>
+            <div className="navbar-title" onClick={() => navigate("/")}>WebShop</div>
             <div className="navbar-buttons">
-                {location.pathname === "/admin" ? (
-                    <button onClick={() => navigate("/")}>Back to Home</button>
-                ) : (
-                    <>
-                        <button onClick={() => navigate("/admin")}>Login</button>
-                        <button onClick={() => navigate("/admin")}>Register</button>
-                    </>
-                )}
+                <button onClick={() => navigate("/cart")}>🛒 ({cart.length})</button>
+                <button onClick={() => navigate("/orders")}>📦 Bestellungen</button>
+                <button onClick={() => navigate("/admin")}>Admin</button>
             </div>
         </nav>
     );

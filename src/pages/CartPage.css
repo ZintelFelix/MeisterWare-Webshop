@@ -1,0 +1,156 @@
+/* 🔹 Warenkorb-Seite */
+.cart-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    text-align: center;
+    background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+    color: white;
+}
+
+/* 🔹 Titel-Überschrift (Warenkorb) */
+.cart-page h1 {
+    font-family: 'Horizon', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5rem; /* Abstand zur Navbar */
+}
+
+/* 🔹 Warenkorb-Container */
+.cart-container {
+    width: 100%; /* Vollständige Breite */
+    max-width: 1200px; /* Optional: Größere maximale Breite */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔹 Produktliste */
+.cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Produktbild */
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 1rem;
+}
+
+/* 🔹 Produktdetails */
+.cart-item-details {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* 🔹 Produktname */
+.cart-item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* 🔹 Preis-Anzeige */
+.cart-item-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #66b2ff;
+}
+
+/* 🔹 Entfernen-Button */
+.cart-item button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    background: linear-gradient(135deg, #ff4c4c, #ff6c4c);
+    color: white;
+}
+
+.cart-item button:hover {
+    background: linear-gradient(135deg, #ff6c4c, #ff8c4c);
+    transform: scale(1.05);
+}
+
+/* 🔹 Gesamtpreis */
+.cart-total {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* 🔹 Buttons-Container */
+.cart-buttons {
+    display: flex;
+    justify-content: space-between; /* Abstand zwischen den Buttons */
+    align-items: center;
+    width: 100%;
+    max-width: 100%; /* Volle Breite */
+    margin-top: 2rem;
+    padding: 0 1rem;
+    gap: 1rem;
+}
+
+/* 🔹 Warenkorb leeren Button */
+.clear-cart {
+    background: linear-gradient(135deg, #ff4c4c, #ff6c4c);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-right: auto; /* Lässt diesen Button GANZ nach links rutschen */
+}
+
+.clear-cart:hover {
+    background: linear-gradient(135deg, #ff6c4c, #ff8c4c);
+    transform: scale(1.05);
+}
+
+/* 🔹 Zur Kasse Button */
+.checkout-button {
+    background: linear-gradient(135deg, #0066ff, #0099ff);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-button:hover {
+    background: linear-gradient(135deg, #0099ff, #00bbff);
+    transform: scale(1.05);
+}
+
+/* 🔹 Leerer Warenkorb Nachricht */
+.empty-cart {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #888;
+}
