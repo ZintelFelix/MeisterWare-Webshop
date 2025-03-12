@@ -1,28 +1,49 @@
+/* 🔹 Navbar Styling - Modern & Elegant */
 .navbar {
-    background-color: #6200ea;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: none;
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 2rem;
     align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease-in-out;
 }
 
-.navbar a {
-    color: white;
-    margin: 0 1rem;
+/* Titel */
+.navbar-title {
+    font-size: 1.8rem;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #66b2ff; /* Helles Blau für edlen Look */
 }
 
+/* Button-Container */
+.navbar-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Buttons */
 .navbar button {
-    margin: 0 0.5rem;
     padding: 0.5rem 1rem;
     border: none;
     color: white;
-    background-color: #3700b3;
+    background: linear-gradient(135deg, #0066ff, #0099ff);
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
 }
 
+/* Button Hover */
 .navbar button:hover {
-    background-color: #1e0080;
+    background: linear-gradient(135deg, #0099ff, #00bbff);
+    transform: scale(1.05);
 }

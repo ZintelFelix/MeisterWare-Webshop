@@ -23,6 +23,7 @@ public class ProductController : ControllerBase
     {
         if (product == null) return BadRequest("Invalid product data");
 
+        product.CreatedAt = DateTime.UtcNow;
         _dbContext.Products.Add(product);
         _dbContext.SaveChanges();
         return Ok(product);
@@ -38,6 +39,10 @@ public class ProductController : ControllerBase
         product.Description = updatedProduct.Description;
         product.Quantity = updatedProduct.Quantity;
         product.Price = updatedProduct.Price;
+        product.ImageUrl = updatedProduct.ImageUrl;
+        product.Category = updatedProduct.Category;
+        product.Rating = updatedProduct.Rating;
+        product.ReviewCount = updatedProduct.ReviewCount;
 
         _dbContext.SaveChanges();
         return Ok(product);

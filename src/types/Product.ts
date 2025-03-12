@@ -1,7 +1,12 @@
 export interface Product {
-    id: number; // Unique identifier for the product
-    name: string; // Product name
-    description: string; // Product description
-    quantity: number; // Quantity available
-    price: number; // Price of the product
+    id: number;
+    name: string;
+    description: string;
+    quantity: number;
+    price: number;
+    imageUrl: string;
+    category: string;
+    rating: number;
+    reviewCount: number;
+    createdAt: string;
 }

@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import "./Navbar.css";
+import "./NavBar.css";
 
 const Navbar = () => {
     const location = useLocation();
@@ -7,8 +7,8 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <div>WebShop</div>
-            <div>
+            <div className="navbar-title">WebShop</div>
+            <div className="navbar-buttons">
                 {location.pathname === "/admin" ? (
                     <button onClick={() => navigate("/")}>Back to Home</button>
                 ) : (

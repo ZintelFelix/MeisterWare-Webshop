@@ -1,26 +1,48 @@
+/* 🔹 HomePage - Modern & Clean */
+body {
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hauptcontainer */
 .homepage {
-    padding: 2rem;
-    font-family: Arial, sans-serif;
-}
-
-.homepage h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7rem 3rem 3rem; /* Extra Padding für Navbar */
     text-align: center;
-    color: #333;
+    background: linear-gradient(135deg, #1c1c1c, #3a3a3a); /* Beibehaltung des Hintergrunds */
 }
 
+/* Titel */
+.homepage h1 {
+    font-family: 'Horizon', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Produktkarten-Container */
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+/* Keine Produkte Nachricht */
 .no-products-message {
     text-align: center;
     margin-top: 2rem;
-    color: #555;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-style: italic;
-}
-
-.product-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    color: #888;
 }
