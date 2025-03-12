@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ProductTable from "../components/ProductTable";
 import { useProductContext } from "../context/ProductContext";
 import "./AdminPage.css";
