@@ -1,47 +1,67 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# -----------------------
+# Build‑Artefakte (.NET)
+# -----------------------
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
 
-# Dependency directories
+# -----------------------
+# Projekt‑User‑Settings
+# -----------------------
+*.csproj.user
+*.suo
+
+# -----------------------
+# IDE & Editor
+# -----------------------
+.vscode/
+!.vscode/extensions.json
+.idea/
+
+# -----------------------
+# Node‑Dependencies & Build
+# -----------------------
 node_modules/
 dist/
 dist-ssr/
 
-# Environment files
+# -----------------------
+# Logdateien
+# -----------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# -----------------------
+# Environment‑Configs
+# -----------------------
 .env
 .env.local
 .env.*.local
 
-# SQLite database files
-*.db
-*.db-journal
-
-# .NET build artifacts
-bin/
-obj/
-*.csproj.user
-
-# Migrations and EF temporary files
+# -----------------------
+# EF Migrations (Versioned)
+# -----------------------
 Migrations/
 
-# IDE directories and files
-.vscode/
-!.vscode/extensions.json
-.idea/
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# -----------------------
+# SQLite Journals & DB
+# -----------------------
+# Ignoriere nur die Journals; die DB selbst solltest du  
+# ebenfalls ignorieren, wenn du sie nicht versionieren willst.
+*.db-journal
+*.db-wal
+*.db-shm
+# Optional, wenn du die .db gar nie ins Repo packen möchtest:
+# *.db
 
-# MacOS system files
+# -----------------------
+# Systemdateien
+# -----------------------
 *.DS_Store
-
-# Windows system files
 Thumbs.db
