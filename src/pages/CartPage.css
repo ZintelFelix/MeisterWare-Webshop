@@ -6,7 +6,7 @@
     align-items: center;
     padding: 3rem;
     text-align: center;
-    background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+    background-color: #ffffff;
     color: white;
 }
 
@@ -152,5 +152,5 @@
 .empty-cart {
     font-size: 1.2rem;
     font-style: italic;
-    color: #888;
+    color: black;
 }

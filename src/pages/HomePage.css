@@ -15,7 +15,7 @@ body {
     align-items: center;
     padding: 7rem 3rem 3rem; /* Extra Padding für Navbar */
     text-align: center;
-    background: linear-gradient(135deg, #1c1c1c, #3a3a3a); /* Beibehaltung des Hintergrunds */
+    background-color: #ffffff;
 }
 
 /* Titel */

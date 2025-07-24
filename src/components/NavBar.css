@@ -1,49 +1,53 @@
-/* 🔹 Navbar Styling - Modern & Elegant */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: none;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    align-items: center;
-    z-index: 100;
-    backdrop-filter: blur(10px);
-    transition: background 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Titel */
 .navbar-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #66b2ff; /* Helles Blau für edlen Look */
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
-/* Button-Container */
+.title-blue {
+  color: #66b2ff;
+  font-weight: bolder;
+}
+
+.title-black {
+  color: #000000;
+  font-weight: normal;
+}
+
 .navbar-buttons {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
-/* Buttons */
-.navbar button {
-    padding: 0.5rem 1rem;
-    border: none;
-    color: white;
-    background: linear-gradient(135deg, #0066ff, #0099ff);
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: background 0.3s ease-in-out, transform 0.2s ease;
+.navbar-buttons button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-/* Button Hover */
-.navbar button:hover {
-    background: linear-gradient(135deg, #0099ff, #00bbff);
-    transform: scale(1.05);
+.navbar-buttons button .w-6 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.navbar-buttons button:hover {
+  color: #374151;
 }
