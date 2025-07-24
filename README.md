@@ -5,7 +5,7 @@ Dies ist eine einfache Webanwendung zur Verwaltung von Produkten. Die Anwendung 
 - **Produkte anzeigen**: Produkte auf der Homepage anzeigen.
 - **Produkte hinzufügen und löschen**: Über die Admin-Seite verwalten.
 
-Dieses Projekt wurde als Teil einer Bewerbungsaufgabe erstellt und verwendet moderne Technologien wie **React**, **TypeScript**, **.NET 9**, und **SQLite**.
+Dieses Projekt verwendet moderne Technologien wie **React**, **TypeScript**, **.NET 9**, und **SQLite**.
 
 ---
 
