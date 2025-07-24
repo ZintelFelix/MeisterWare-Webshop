@@ -7,8 +7,6 @@ const HomePage = () => {
 
     return (
         <div className="homepage">
-            <h1>Products</h1>
-
             {products.length === 0 ? (
                 <div className="no-products-message">
                     <p>No products available right now.</p>
