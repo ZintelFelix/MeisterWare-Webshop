@@ -43,6 +43,7 @@ public class ProductController : ControllerBase
         product.Category = updatedProduct.Category;
         product.Rating = updatedProduct.Rating;
         product.ReviewCount = updatedProduct.ReviewCount;
+        product.Featured = updatedProduct.Featured;
 
         _dbContext.SaveChanges();
         return Ok(product);

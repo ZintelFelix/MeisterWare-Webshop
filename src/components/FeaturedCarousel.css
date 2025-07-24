@@ -1,0 +1,91 @@
+.featured-carousel {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Entfernt den blauen Outline-Rand beim Anklicken der Pfeile */
+.slick-prev:focus,
+.slick-next:focus {
+    outline: none;
+}
+
+/* Slide Wrapper */
+.carousel-slide {
+    outline: none;
+    /* verhindert den blauen Fokus-Rand */
+}
+
+/* Innerer Flex-Container, Text links, Bild rechts */
+.carousel-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+/* Textbereich */
+.carousel-text {
+    flex: 1;
+    min-width: 280px;
+    max-width: 50%;
+    padding-right: 1.5rem;
+}
+
+.carousel-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.carousel-desc {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+/* Button “Mehr erfahren” */
+.carousel-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease-in-out;
+}
+
+.carousel-button:hover {
+    background-color: #1e40af;
+}
+
+/* Bildbereich */
+.carousel-image {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+.carousel-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Dots (Kreise unter dem Slide) */
+.slick-dots {
+    bottom: 10px;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+    color: #9ca3af;
+    opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #2563eb;
+}

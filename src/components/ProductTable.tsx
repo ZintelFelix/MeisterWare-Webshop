@@ -1,3 +1,4 @@
+// src/components/ProductTable.tsx
 import React from "react";
 import { Product } from "../types/Product";
 
@@ -8,7 +9,12 @@ interface ProductTableProps {
     onDelete?: (id: number) => void;
 }
 
-const ProductTable: React.FC<ProductTableProps> = ({ products, editable = false, onEdit, onDelete }) => (
+const ProductTable: React.FC<ProductTableProps> = ({
+    products,
+    editable = false,
+    onEdit,
+    onDelete,
+}) => (
     <table className="product-table">
         <thead>
             <tr>
@@ -16,6 +22,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ products, editable = false,
                 <th>Description</th>
                 <th>Quantity</th>
                 <th>Price</th>
+                {editable && <th>Featured</th>}
                 {editable && <th>Actions</th>}
             </tr>
         </thead>
@@ -26,6 +33,19 @@ const ProductTable: React.FC<ProductTableProps> = ({ products, editable = false,
                     <td>{product.description}</td>
                     <td>{product.quantity}</td>
                     <td>€{product.price.toFixed(2)}</td>
+
+                    {/* ✔ Checkbox für Featured */}
+                    {editable && (
+                        <td>
+                            <input
+                                type="checkbox"
+                                checked={!!product.featured}
+                                onChange={() => onEdit?.(product)}
+                            />
+                        </td>
+                    )}
+
+                    {/* ❌ Delete-Button */}
                     {editable && (
                         <td>
                             <button onClick={() => onDelete?.(product.id)}>Delete</button>

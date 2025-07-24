@@ -6,8 +6,7 @@
     align-items: center;
     padding: 3rem;
     text-align: center;
-    background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
-    color: white;
+    background-color: white;
 }
 
 /* 🔹 Titel */
@@ -74,7 +73,7 @@
 .product-table th, .product-table td {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 1rem;
-    color: #dddddd;
+    color: black;
 }
 
 /* Hover-Effekt für Zeilen */

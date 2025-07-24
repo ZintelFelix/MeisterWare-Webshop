@@ -1,7 +1,7 @@
 public class Product
 {
     public int Id { get; set; }
-    public string Name { get; set; } = string.Empty; 
+    public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public int Quantity { get; set; }
     public decimal Price { get; set; }
@@ -15,4 +15,5 @@ public class Product
     public int ReviewCount { get; set; } = 0;
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public bool Featured { get; set; } = false;
 }

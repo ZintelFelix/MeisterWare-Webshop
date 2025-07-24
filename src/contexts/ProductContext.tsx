@@ -1,5 +1,10 @@
-/* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useState, useEffect, ReactNode } from "react";
+import React, {
+    createContext,
+    useState,
+    useEffect,
+    useContext,
+    ReactNode,
+} from "react";
 import { Product } from "../types/Product";
 
 export interface ProductContextProps {
@@ -24,12 +29,17 @@ export const ProductProvider: React.FC<{ children: ReactNode }> = ({
             .catch((error) => console.error("Error fetching products:", error));
     };
 
+    // Jetzt PUT statt PATCH, und wir erwarten das komplette Product-Objekt
     const updateProduct = async (updatedProduct: Product) => {
-        await fetch(`http://localhost:5254/api/Product/${updatedProduct.id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedProduct),
-        });
+        await fetch(
+            `http://localhost:5254/api/Product/${updatedProduct.id}`,
+            {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(updatedProduct),
+            }
+        );
+        // Liste neu laden
         fetchProducts();
     };
 
@@ -44,4 +54,14 @@ export const ProductProvider: React.FC<{ children: ReactNode }> = ({
             {children}
         </ProductContext.Provider>
     );
+};
+
+export const useProductContext = () => {
+    const context = useContext(ProductContext);
+    if (!context) {
+        throw new Error(
+            "useProductContext must be used within a ProductProvider"
+        );
+    }
+    return context;
 };

@@ -1,20 +1,26 @@
+import React from "react";
+import FeaturedCarousel from "../components/FeaturedCarousel";
 import ProductCard from "../components/ProductCard";
-import { useProductContext } from "../context/ProductContext";
+import { useProductContext } from "../hooks/useProductContext";
 import "./HomePage.css";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
     const { products } = useProductContext();
+
+    const featured = products.filter((p) => p.featured);
+    const normal = products.filter((p) => !p.featured);
 
     return (
         <div className="homepage">
-            {products.length === 0 ? (
+            {featured.length > 0 && <FeaturedCarousel products={featured} />}
+
+            {normal.length === 0 ? (
                 <div className="no-products-message">
-                    <p>No products available right now.</p>
-                    <p>Please add some products to display here.</p>
+                    <p>Zurzeit sind keine Produkte verfügbar.</p>
                 </div>
             ) : (
                 <div className="product-cards">
-                    {products.map((product) => (
+                    {normal.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}
                 </div>

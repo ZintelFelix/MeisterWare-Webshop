@@ -9,4 +9,5 @@ export interface Product {
     rating: number;
     reviewCount: number;
     createdAt: string;
+    featured?: boolean;
 }
