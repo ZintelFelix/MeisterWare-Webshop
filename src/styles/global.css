@@ -1,36 +1,44 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --color-bg: #f9f9f9;
+  --color-bg-alt: #ffffff;
+  --color-primary: #0066ff;
+  --color-primary-hover: #0051cc;
+  --color-secondary: #ff4c4c;
+  --color-secondary-hover: #e04343;
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --spacing: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
+h1, h2, h3, h4 {
+  margin-bottom: var(--spacing);
+  color: var(--color-text);
 }
 
-@font-face {
-    font-family: 'Horizon';
-    src: url('/fonts/horizon.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'HorizonOutlined';
-    src: url('/fonts/horizon_outlined.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+button {
+  font-family: inherit;
+  cursor: pointer;
 }

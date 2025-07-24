@@ -1,92 +1,40 @@
 .product-card {
-    position: relative;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05); /* Sanftes, neutrales Glas-Design */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    padding: 1.5rem;
-    width: 320px;
-    text-align: center;
-    backdrop-filter: blur(8px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-alt);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Sanfte Hover-Animation */
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Titel */
-.product-card h3 {
-    font-size: 1.6rem;
-    color: #ffffff;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.product-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
-/* Beschreibung */
-.product-card p {
-    font-size: 1rem;
-    color: #bbbbbb;
-    margin-bottom: 0.5rem;
+.product-card-content {
+  padding: var(--spacing);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Neuer Preisbereich – elegant mit leichtem Glow */
-.product-card .price {
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: #ff4c4c;
-    margin-top: 1rem;
-    padding: 10px 20px;
-    background: rgba(255, 76, 76, 0.15);
-    border-radius: 8px;
-    display: inline-block;
-    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.product-card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
 }
 
-/* Dezenter Glow für den Preis beim Hover */
-.product-card:hover .price {
-    background: rgba(255, 76, 76, 0.25);
-    box-shadow: 0 0 15px rgba(255, 76, 76, 0.3);
+.product-card-price {
+  margin-top: auto;
+  font-weight: bold;
+  color: var(--color-primary);
 }
-
-/* Moderner Button für „Add to Cart“ */
-.product-card button {
-    margin-top: 1rem;
-    padding: 10px 20px;
-    border: none;
-    background: linear-gradient(135deg, #ff4c4c, #ff6c4c);
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-/* Button Hover */
-.product-card button:hover {
-    background: linear-gradient(135deg, #ff6c4c, #ff8c4c);
-    transform: scale(1.05);
-}
-
-.product-image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    margin-bottom: 10px;
-}
-
-.rating {
-    color: gold;
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.category {
-    font-size: 0.9rem;
-    color: #bbbbbb;
-    margin-bottom: 10px;
-}
-

@@ -1,91 +1,58 @@
 .featured-carousel {
-    width: 100%;
-    margin-bottom: 2rem;
+  width: 100%;
+  margin-bottom: calc(var(--spacing) * 2);
 }
 
-/* Entfernt den blauen Outline-Rand beim Anklicken der Pfeile */
-.slick-prev:focus,
-.slick-next:focus {
-    outline: none;
-}
-
-/* Slide Wrapper */
-.carousel-slide {
-    outline: none;
-    /* verhindert den blauen Fokus-Rand */
-}
-
-/* Innerer Flex-Container, Text links, Bild rechts */
 .carousel-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    background-color: #ffffff;
+  background: var(--color-bg-alt);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--spacing) * 2);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 }
 
-/* Textbereich */
 .carousel-text {
-    flex: 1;
-    min-width: 280px;
-    max-width: 50%;
-    padding-right: 1.5rem;
+  flex: 1;
+  min-width: 280px;
+  max-width: 50%;
+  padding-right: var(--spacing);
 }
 
 .carousel-title {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #111827;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
 }
 
 .carousel-desc {
-    font-size: 1rem;
-    color: #4b5563;
-    margin-bottom: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing);
 }
 
-/* Button “Mehr erfahren” */
 .carousel-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #2563eb;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background 0.2s ease-in-out;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: var(--spacing) calc(var(--spacing) * 1.5);
+  border-radius: var(--border-radius);
+  transition: background 0.2s ease;
 }
 
 .carousel-button:hover {
-    background-color: #1e40af;
-}
-
-/* Bildbereich */
-.carousel-image {
-    flex: 1;
-    min-width: 280px;
-    text-align: center;
+  background: var(--color-primary-hover);
 }
 
 .carousel-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
 }
 
-/* Dots (Kreise unter dem Slide) */
-.slick-dots {
-    bottom: 10px;
-}
-
-.slick-dots li button:before {
-    font-size: 10px;
-    color: #9ca3af;
-    opacity: 1;
-}
-
-.slick-dots li.slick-active button:before {
-    color: #2563eb;
+.slick-prev:focus,
+.slick-next:focus,
+.carousel-slide:focus {
+  outline: none;
 }

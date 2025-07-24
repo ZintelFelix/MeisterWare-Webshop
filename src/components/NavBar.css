@@ -1,53 +1,47 @@
 .navbar {
+  background: var(--color-bg-alt);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacing) * 0.5) var(--spacing);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2rem;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .navbar-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
   cursor: pointer;
 }
 
 .title-blue {
-  color: #66b2ff;
-  font-weight: bolder;
+  color: var(--color-primary);
 }
 
 .title-black {
-  color: #000000;
-  font-weight: normal;
+  color: var(--color-text);
 }
 
 .navbar-buttons {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  gap: var(--spacing);
 }
 
 .navbar-buttons button {
   background: none;
   border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  color: #6b7280;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.navbar-buttons button .w-6 {
-  width: 1.5rem;
-  height: 1.5rem;
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  transition: background 0.2s ease, color 0.2s ease;
+  color: var(--color-text-muted);
 }
 
 .navbar-buttons button:hover {
-  color: #374151;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.navbar-buttons button:focus-visible {
+  outline: 2px solid var(--color-primary);
 }
