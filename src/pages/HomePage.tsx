@@ -1,30 +1,53 @@
 import React from "react";
 import FeaturedCarousel from "../components/FeaturedCarousel";
-import ProductCard from "../components/ProductCard";
 import { useProductContext } from "../hooks/useProductContext";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 const HomePage: React.FC = () => {
     const { products } = useProductContext();
+    const navigate = useNavigate();
 
+    // Nur Featured‑Produkte für den Carousel
     const featured = products.filter((p) => p.featured);
-    const normal = products.filter((p) => !p.featured);
+
+    // Einzigartige Kategorien
+    const uniqueCategories = Array.from(
+        new Set(products.map((p) => p.category))
+    );
 
     return (
         <div className="homepage">
+            {/* Hero Carousel */}
             {featured.length > 0 && <FeaturedCarousel products={featured} />}
 
-            {normal.length === 0 ? (
-                <div className="no-products-message">
-                    <p>Zurzeit sind keine Produkte verfügbar.</p>
-                </div>
-            ) : (
-                <div className="product-cards">
-                    {normal.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                    ))}
-                </div>
-            )}
+            {/* Haupt-Content: nur Kategorien */}
+            <div className="page-container">
+                <section className="category-section">
+                    <h2 className="section-title">Kategorien</h2>
+                    <div className="category-grid">
+                        {uniqueCategories.map((cat) => {
+                            const imgSrc =
+                                products.find((p) => p.category === cat)?.imageUrl ||
+                                "/assets/placeholder.png";
+                            return (
+                                <div
+                                    key={cat}
+                                    className="category-card"
+                                    onClick={() =>
+                                        navigate(`/category/${encodeURIComponent(cat)}`)
+                                    }
+                                >
+                                    <div className="category-image-wrapper">
+                                        <img src={imgSrc} alt={cat} />
+                                    </div>
+                                    <div className="category-label">{cat}</div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </section>
+            </div>
         </div>
     );
 };

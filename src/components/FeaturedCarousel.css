@@ -1,10 +1,12 @@
 .featured-carousel {
+  background-color: #eef2f5;
   width: 100%;
+  padding: calc(var(--spacing) * 4) 0;
   margin-bottom: calc(var(--spacing) * 2);
 }
 
 .carousel-content {
-  background: var(--color-bg-alt);
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -14,6 +16,7 @@
   box-shadow: var(--box-shadow);
 }
 
+/* Textbereich */
 .carousel-text {
   flex: 1;
   min-width: 280px;
@@ -45,12 +48,33 @@
   background: var(--color-primary-hover);
 }
 
+/* Bildbereich */
+.carousel-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .carousel-image img {
   max-width: 100%;
   height: auto;
   border-radius: var(--border-radius);
 }
 
+/* Abstände der Slick-Pfeile & Dots */
+.slick-prev,
+.slick-next {
+  z-index: 2;
+}
+
+.slick-dots {
+  bottom: calc(var(--spacing) * -1);
+}
+
+/* Fokus-Rahmen entfernen */
 .slick-prev:focus,
 .slick-next:focus,
 .carousel-slide:focus {

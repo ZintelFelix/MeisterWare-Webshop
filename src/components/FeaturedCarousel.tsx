@@ -20,7 +20,7 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({ products }) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
     };
 
     return (

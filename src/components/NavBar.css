@@ -1,11 +1,22 @@
 .navbar {
-  background: var(--color-bg-alt);
-  box-shadow: var(--box-shadow);
-  border-radius: var(--border-radius);
-  padding: calc(var(--spacing) * 0.5) var(--spacing);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: calc(var(--spacing) * 0.75) calc(var(--spacing) * 2);
+  background: var(--color-bg-alt); 
+  border-radius: 0;
+  box-shadow: 5px 15px 10px -10px rgba(0,0,0,0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Left area containing title and the links */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
 }
 
 .navbar-title {
@@ -13,6 +24,9 @@
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .title-blue {
@@ -23,9 +37,30 @@
   color: var(--color-text);
 }
 
+/* Navigation links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 1.5);
+}
+
+.navbar-links li {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.navbar-links li:hover {
+  color: var(--color-primary);
+}
+
+/* Right side buttons (icons) */
 .navbar-buttons {
   display: flex;
-  gap: var(--spacing);
+  gap: calc(var(--spacing) * 0.5);
 }
 
 .navbar-buttons button {
@@ -35,6 +70,9 @@
   border-radius: var(--border-radius);
   transition: background 0.2s ease, color 0.2s ease;
   color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-buttons button:hover {
