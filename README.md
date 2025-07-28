@@ -1,4 +1,4 @@
-# **WareMeister Webshop**
+# **MeisterWare Webshop**
 
 Dies ist eine einfache Webanwendung zur Verwaltung von Produkten. Die Anwendung bietet folgende Hauptfunktionen:
 
