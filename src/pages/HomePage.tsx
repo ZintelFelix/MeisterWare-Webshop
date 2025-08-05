@@ -1,6 +1,7 @@
 import React from "react";
 import FeaturedCarousel from "../components/FeaturedCarousel";
 import { useProductContext } from "../hooks/useProductContext";
+import OverviewSection from '../components/OverviewSection';
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
@@ -20,7 +21,9 @@ const HomePage: React.FC = () => {
         <div className="homepage">
             {/* Hero Carousel */}
             {featured.length > 0 && <FeaturedCarousel products={featured} />}
-
+            <div>
+            <OverviewSection/>
+            </div>
             {/* Haupt-Content: nur Kategorien */}
             <div className="page-container">
                 <section className="category-section">

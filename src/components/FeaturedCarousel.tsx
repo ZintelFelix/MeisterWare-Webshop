@@ -1,3 +1,4 @@
+// src/components/FeaturedCarousel.tsx
 import React from "react";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
@@ -16,11 +17,14 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({ products }) => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
         adaptiveHeight: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true
     };
 
     return (

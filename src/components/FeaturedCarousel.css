@@ -1,8 +1,8 @@
+/* src/components/FeaturedCarousel.css */
 .featured-carousel {
-  background-color: #e2e6e9;
+  background: linear-gradient(to bottom, #c5c5c5, #fff);
   width: 100%;
   padding: calc(var(--spacing) * 4) 0;
-  margin-bottom: calc(var(--spacing) * 2);
 }
 
 .carousel-content {
@@ -16,7 +16,6 @@
   box-shadow: var(--box-shadow);
 }
 
-/* Textbereich */
 .carousel-text {
   flex: 1;
   min-width: 280px;
@@ -48,7 +47,6 @@
   background: var(--color-primary-hover);
 }
 
-/* Bildbereich */
 .carousel-image {
   flex: 1;
   min-width: 280px;
@@ -64,7 +62,6 @@
   border-radius: var(--border-radius);
 }
 
-/* Abstände der Slick-Pfeile & Dots */
 .slick-prev,
 .slick-next {
   z-index: 2;
@@ -74,7 +71,6 @@
   bottom: calc(var(--spacing) * -1);
 }
 
-/* Fokus-Rahmen entfernen */
 .slick-prev:focus,
 .slick-next:focus,
 .carousel-slide:focus {

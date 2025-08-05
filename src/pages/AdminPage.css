@@ -150,6 +150,17 @@
     margin-top: 5px;
 }
 
+.modal-content textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  margin-top: 5px;
+  min-height: 120px;
+}
+
 /* 🔹 Vorschau-Bild */
 .image-preview {
     width: 100%;
