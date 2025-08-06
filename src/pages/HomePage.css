@@ -62,4 +62,21 @@
   font-weight: 500;
 }
 
-/* (ProduktsSektion entfernt) */
+.teaser-section {
+  display: grid;
+  gap: var(--spacing);
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: calc(var(--spacing) * 4);
+}
+
+@media (max-width: 900px) {
+  .teaser-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .teaser-section {
+    grid-template-columns: 1fr;
+  }
+}

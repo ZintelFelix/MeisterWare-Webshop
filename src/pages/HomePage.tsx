@@ -2,6 +2,10 @@ import React from "react";
 import FeaturedCarousel from "../components/FeaturedCarousel";
 import { useProductContext } from "../hooks/useProductContext";
 import OverviewSection from '../components/OverviewSection';
+import TeaserCard from '../components/TeaserCard';
+import smartWatchImg from '../assets/SmartWatch.webp';
+import Phone from '../assets/Phone.webp';
+import HeadPhones from '../assets/HeadPhones.webp';
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
@@ -22,12 +26,34 @@ const HomePage: React.FC = () => {
             {/* Hero Carousel */}
             {featured.length > 0 && <FeaturedCarousel products={featured} />}
             <div>
-            <OverviewSection/>
+                <OverviewSection />
+            </div>
+            <div className="page-container">
+                <div className="teaser-section">
+                <TeaserCard
+                    title="PlaceHolder"
+                    subtitle="PlaceHolder"
+                    imgSrc={smartWatchImg}
+                    linkTo="/products/qpad"
+                />
+                <TeaserCard
+                    title="PlaceHolder"
+                    subtitle="PlaceHolder"
+                    imgSrc={Phone}
+                    linkTo="/products/prophone"
+                />
+                <TeaserCard
+                    title="PlaceHolder"
+                    subtitle="PlaceHolder"
+                    imgSrc={HeadPhones}
+                    linkTo="/products/headphones"
+                />
+                </div>
             </div>
             {/* Haupt-Content: nur Kategorien */}
             <div className="page-container">
                 <section className="category-section">
-                    <h2 className="section-title">Kategorien</h2>
+                    <h2 className="section-title">Unsere Produkte</h2>
                     <div className="category-grid">
                         {uniqueCategories.map((cat) => {
                             const imgSrc =
@@ -51,7 +77,7 @@ const HomePage: React.FC = () => {
                     </div>
                 </section>
             </div>
-        </div>
+        </div >
     );
 };
 
