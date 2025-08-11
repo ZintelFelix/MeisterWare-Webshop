@@ -1,4 +1,3 @@
-// src/components/FeaturedCarousel.tsx
 import React from "react";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
@@ -7,9 +6,10 @@ import "./FeaturedCarousel.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-interface FeaturedCarouselProps {
-    products: Product[];
-}
+interface FeaturedCarouselProps { products: Product[]; }
+
+const truncate = (text: string, n = 160) =>
+    text.length > n ? text.slice(0, n - 1) + "…" : text;
 
 const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({ products }) => {
     const navigate = useNavigate();
@@ -17,14 +17,14 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({ products }) => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 1000,
+        speed: 800,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
         adaptiveHeight: false,
         autoplay: true,
-        autoplaySpeed: 3000,
-        pauseOnHover: true
+        autoplaySpeed: 3200,
+        pauseOnHover: true,
     };
 
     return (
@@ -34,18 +34,37 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({ products }) => {
                     <div key={product.id} className="carousel-slide">
                         <div className="carousel-content">
                             <div className="carousel-text">
-                                <h2 className="carousel-title">{product.name}</h2>
-                                <p className="carousel-desc">{product.description}</p>
+                                <h1 className="carousel-title">{product.name}</h1>
+                                {product.description && (
+                                    <p className="carousel-desc">
+                                        {truncate(product.description, 180)}
+                                    </p>
+                                )}
                                 <button
                                     className="carousel-button"
                                     onClick={() => navigate(`/product/${product.id}`)}
                                 >
-                                    Mehr erfahren →
+                                    Discover More
                                 </button>
                             </div>
+
                             <div className="carousel-image">
                                 <img src={product.imageUrl} alt={product.name} />
                             </div>
+                        </div>
+
+                        <div className="float-badge" aria-label="Product quick info">
+                            <div style={{ fontWeight: 700 }}>Price</div>
+                            <div style={{ fontSize: "1.1rem" }}>
+                                €{product.price.toFixed(2)}
+                            </div>
+                            <button
+                                className="carousel-button"
+                                onClick={() => navigate(`/product/${product.id}`)}
+                                style={{ padding: "8px 14px", borderRadius: 12 }}
+                            >
+                                View
+                            </button>
                         </div>
                     </div>
                 ))}

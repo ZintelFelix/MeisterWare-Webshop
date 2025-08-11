@@ -6,6 +6,7 @@ import OrderPage from "./pages/OrderPage";
 import CategoryPage from "./pages/CategoryPage";
 import FeaturesPage from "./pages/FeaturesPage";
 import Navbar from "./components/Navbar";
+import SiteFooter from "./components/SiteFooter";
 import { CartProvider } from "./context/CartContext";
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
           <Route path="/orders" element={<OrderPage />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
           <Route path="/features" element={<FeaturesPage />} />
-        </Routes> 
+        </Routes>
+        <SiteFooter />
       </Router>
     </CartProvider>
   );
