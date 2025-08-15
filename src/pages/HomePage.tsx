@@ -7,6 +7,7 @@ import CategoriesSection from "../components/CategoriesSection";
 import { useProductContext } from "../hooks/useProductContext";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
+import supportImg from "../assets/promo-hero.webp";
 
 const HomePage: React.FC = () => {
     const { products } = useProductContext();
@@ -23,7 +24,7 @@ const HomePage: React.FC = () => {
                 title="30 Tage Geld-zurück-Garantie"
                 text="Teste unsere Hardware risikofrei. Solltest du nicht zufrieden sein, bekommst du unkompliziert dein Geld zurück."
                 ctaLabel="Jetzt entdecken"
-                imageUrl="/assets/promo-hero.jpg"
+                imageUrl={supportImg}
                 onCta={() => navigate("/returns")}
             />
         </div>

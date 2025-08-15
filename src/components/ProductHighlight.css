@@ -46,6 +46,7 @@
     display: grid;
     gap: 10px;
     align-content: end;
+    justify-items: start;
     padding: 18px;
 }
 
@@ -79,6 +80,7 @@
     font-weight: 700;
     width: max-content;
     transition: opacity .2s ease, transform .12s ease;
+    justify-self: end;
 }
 
 .ph__cta:hover {

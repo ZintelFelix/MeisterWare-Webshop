@@ -2,27 +2,23 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import ProductHighlight from "./ProductHighlight";
 import "./HighlightsRow.css";
+import gpuImg from "../assets/highlight-gpu.jpg";
+import audioImg from "../assets/promo-hero.webp";
+import laptopImg from "../assets/AppleMacBook.jpg";
 
-// Du kannst hier deine echten Bilder pflegen
 const highlights = [
     {
-        eyebrow: "High-End GPUs",
-        title: "GeForce RTX Series",
-        imageUrl: "/assets/highlight-gpu.jpg",
+        imageUrl: gpuImg,
         to: "/category/Grafikkarten",
         tone: "neutral" as const,
     },
     {
-        eyebrow: "Creator Laptops",
-        title: "Power for Pros",
-        imageUrl: "/assets/highlight-laptop.jpg",
+        imageUrl: laptopImg,
         to: "/category/Laptops",
         tone: "blush" as const,
     },
     {
-        eyebrow: "Audio Gear",
-        title: "Crisp & Wireless",
-        imageUrl: "/assets/highlight-audio.jpg",
+        imageUrl: audioImg,
         to: "/category/Kopfhörer",
         tone: "mint" as const,
     },
@@ -36,8 +32,6 @@ const HighlightsRow: React.FC = () => {
                 {highlights.map((h, i) => (
                     <ProductHighlight
                         key={i}
-                        eyebrow={h.eyebrow}
-                        title={h.title}
                         imageUrl={h.imageUrl}
                         tone={h.tone}
                         onClick={() => navigate(h.to)}
