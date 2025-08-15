@@ -1,15 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Search, Heart, User, ShoppingCart, PlusCircle } from "lucide-react";
+import { Sun, Moon, Search, Heart, User, ShoppingCart, PlusCircle } from "lucide-react";
+import { useTheme } from "../useTheme";
 import "./NavBar.css";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
+  const { theme, toggle } = useTheme();
 
   return (
     <div className="nav-wrap">
       <nav className="navbar">
-        {/* Logo/Brand */}
         <div className="navbar-left" onClick={() => navigate("/")} role="button" aria-label="Home">
           <div className="navbar-title">
             <span className="title-black">Meister</span>
@@ -17,7 +18,6 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Zentrale Links */}
         <ul className="navbar-links">
           <li onClick={() => navigate("/")}>Home</li>
           <li onClick={() => navigate("/about")}>About</li>
@@ -25,13 +25,12 @@ const Navbar: React.FC = () => {
           <li onClick={() => navigate("/faq")}>FAQ</li>
         </ul>
 
-        {/* Rechte Seite */}
         <div className="navbar-right">
-          <button className="contact-pill" onClick={() => navigate("/contact")}>
-            Contact Us
-          </button>
-
+          <button className="contact-pill" onClick={() => navigate("/contact")}>Contact Us</button>
           <div className="navbar-buttons">
+            <button onClick={toggle} aria-label="Theme" title="Theme">
+              {theme === "dark" ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
+            </button>
             <button onClick={() => navigate("/admin")} aria-label="Admin" title="Admin-Item Manager">
               <PlusCircle className="w-6 h-6" aria-hidden="true" />
             </button>

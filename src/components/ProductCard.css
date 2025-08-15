@@ -1,89 +1,88 @@
 .product-card {
-  background: var(--color-bg-alt);
-  border: 1px solid rgba(0, 0, 0, .06);
+  background: var(--color-card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 20px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, .06);
+  box-shadow: var(--box-shadow);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform .18s ease, box-shadow .2s ease;
+  color: var(--color-text)
 }
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, .10);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, .10)
 }
 
 .product-card__media {
   position: relative;
-  aspect-ratio: 4 / 3;
-  /* ruhiger Bildausschnitt */
-  background: #f3f4f6;
+  aspect-ratio: 4/3;
+  background: var(--color-bg)
 }
 
 .product-card__media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* Tech-Produkt freistellen */
-  display: block;
+  display: block
 }
 
 .product-card__chip {
   position: absolute;
   left: 12px;
   top: 12px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, .08);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--border-color);
   border-radius: 999px;
   padding: 6px 10px;
   font-size: .8rem;
   font-weight: 600;
+  color: var(--color-text)
 }
 
 .product-card__body {
   display: grid;
   gap: 10px;
-  padding: 16px 16px 18px;
+  padding: 16px 16px 18px
 }
 
 .product-card__title {
   margin: 0;
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-text)
 }
 
 .product-card__desc {
   margin: 0;
   color: var(--color-text-muted);
-  font-size: .95rem;
+  font-size: .95rem
 }
 
 .product-card__meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 12px
 }
 
 .product-card__rating {
   font-size: .95rem;
   letter-spacing: .5px;
-  color: #f5a623;
-  /* Sternfarbe */
+  color: #f5a623
 }
 
 .product-card__reviews {
   margin-left: 6px;
   color: var(--color-text-muted);
-  font-size: .9rem;
+  font-size: .9rem
 }
 
 .product-card__price {
   font-weight: 800;
   font-size: 1.1rem;
-  color: var(--color-text);
+  color: var(--color-text)
 }
 
 .product-card__cta {
@@ -91,14 +90,14 @@
   border: 0;
   border-radius: 999px;
   padding: 10px 14px;
-  background: #111;
-  color: #fff;
+  background: var(--button-bg);
+  color: var(--button-fg);
   font-weight: 600;
   cursor: pointer;
-  transition: opacity .2s ease, transform .12s ease;
+  transition: opacity .2s ease, transform .12s ease
 }
 
 .product-card__cta:hover {
   opacity: .95;
-  transform: translateY(-1px);
+  transform: translateY(-1px)
 }

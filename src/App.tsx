@@ -7,24 +7,21 @@ import CategoryPage from "./pages/CategoryPage";
 import FeaturesPage from "./pages/FeaturesPage";
 import Navbar from "./components/Navbar";
 import SiteFooter from "./components/SiteFooter";
-import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/orders" element={<OrderPage />} />
-          <Route path="/category/:categoryName" element={<CategoryPage />} />
-          <Route path="/features" element={<FeaturesPage />} />
-        </Routes>
-        <SiteFooter />
-      </Router>
-    </CartProvider>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/orders" element={<OrderPage />} />
+        <Route path="/category/:categoryName" element={<CategoryPage />} />
+        <Route path="/features" element={<FeaturesPage />} />
+      </Routes>
+      <SiteFooter />
+    </Router>
   );
 }
 

@@ -1,49 +1,52 @@
 .homepage {
   background: var(--color-bg);
-  padding: 0;
+  padding: 0
 }
 
 .cart-container {
   padding: var(--spacing);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing);
+  gap: var(--spacing)
 }
 
 .cart-item {
-  background: var(--color-bg-alt);
+  background: var(--color-card-bg);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   display: flex;
   align-items: center;
   gap: var(--spacing);
   padding: var(--spacing);
+  color: var(--color-text)
 }
 
 .cart-item img {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius)
 }
 
 .cart-summary {
   margin-top: var(--spacing);
   text-align: right;
   font-size: 1.25rem;
-  font-weight: bold;
-  color: var(--color-text);
+  font-weight: 700;
+  color: var(--color-text)
 }
 
 .checkout-button {
-  background: var(--color-primary);
-  color: #fff;
-  border: none;
-  padding: var(--spacing) var(--spacing * 2);
+  background: var(--button-bg);
+  color: var(--button-fg);
+  border: 1px solid var(--border-color);
+  padding: calc(var(--spacing)) calc(var(--spacing)*2);
   border-radius: var(--border-radius);
-  transition: background 0.2s ease;
+  transition: opacity .2s ease, transform .12s ease
 }
 
 .checkout-button:hover {
-  background: var(--color-primary-hover);
+  opacity: .95;
+  transform: translateY(-1px)
 }

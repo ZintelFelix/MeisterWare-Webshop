@@ -2,12 +2,12 @@ import React from "react";
 import "./ProductHighlight.css";
 
 type Props = {
-    eyebrow?: string;           // z. B. "High-End GPUs"
-    title: string;              // z. B. "GeForce RTX Series"
-    ctaLabel?: string;          // z. B. "Discover More"
-    imageUrl: string;           // großes Hero-Bild
-    onClick?: () => void;       // Navigation
-    tone?: "neutral" | "blush" | "mint"; // dezente Hintergründe
+    eyebrow?: string;           
+    title: string;              
+    ctaLabel?: string;          
+    imageUrl: string;           
+    onClick?: () => void;       
+    tone?: "neutral" | "blush" | "mint"; 
 };
 
 const ProductHighlight: React.FC<Props> = ({

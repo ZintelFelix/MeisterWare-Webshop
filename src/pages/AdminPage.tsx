@@ -7,6 +7,7 @@ import "./AdminPage.css";
 
 const AdminPage: React.FC = () => {
     const { products, fetchProducts, updateProduct } = useProductContext();
+
     const [showAddForm, setShowAddForm] = useState(false);
     const [newProduct, setNewProduct] = useState<Partial<Product>>({
         name: "",
@@ -20,12 +21,8 @@ const AdminPage: React.FC = () => {
         featured: false,
     });
 
-    // Create new product
     const handleCreate = () => {
-        const payload = {
-            ...newProduct,
-            createdAt: new Date().toISOString(),
-        };
+        const payload = { ...newProduct, createdAt: new Date().toISOString() };
         fetch("http://localhost:5254/api/Product", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -42,13 +39,10 @@ const AdminPage: React.FC = () => {
             .catch((err) => alert(err.message));
     };
 
-    // Toggle featured flag
     const handleToggleFeatured = (product: Product) => {
-        console.log("Toggling featured for", product.id, "→", !product.featured);
         updateProduct({ ...product, featured: !product.featured });
     };
 
-    // Delete product
     const handleDelete = (id: number) => {
         if (!window.confirm("Produkt wirklich löschen?")) return;
         fetch(`http://localhost:5254/api/Product/${id}`, { method: "DELETE" })
@@ -59,7 +53,6 @@ const AdminPage: React.FC = () => {
             .catch((err) => alert(err.message));
     };
 
-    // Handle add-form input changes
     const handleChange = (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
@@ -79,9 +72,15 @@ const AdminPage: React.FC = () => {
     return (
         <div className="admin-page">
             <h1>Admin Dashboard</h1>
-            <button className="add-product-button" onClick={() => setShowAddForm(true)}>
-                + Neues Produkt
-            </button>
+
+            <div className="add-product-container">
+                <button
+                    className="add-product-button"
+                    onClick={() => setShowAddForm(true)}
+                >
+                    + Neues Produkt
+                </button>
+            </div>
 
             {showAddForm && (
                 <div className="modal-overlay">
@@ -145,8 +144,8 @@ const AdminPage: React.FC = () => {
                         <label>Bewertung</label>
                         <input
                             type="number"
-                            min="0"
-                            max="5"
+                            min={0}
+                            max={5}
                             name="rating"
                             placeholder="Bewertung"
                             value={newProduct.rating ?? 0}
@@ -179,7 +178,12 @@ const AdminPage: React.FC = () => {
 
                         <div className="modal-buttons">
                             <button onClick={handleCreate}>Speichern</button>
-                            <button onClick={() => setShowAddForm(false)}>Abbrechen</button>
+                            <button
+                                className="cancel-button"
+                                onClick={() => setShowAddForm(false)}
+                            >
+                                Abbrechen
+                            </button>
                         </div>
                     </div>
                 </div>

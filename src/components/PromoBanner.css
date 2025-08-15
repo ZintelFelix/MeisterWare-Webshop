@@ -1,25 +1,26 @@
 .promo {
     width: 100%;
-    margin: 64px 0;
+    margin: 64px 0
 }
 
 .promo__inner {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
-    background: #fff;
+    background: var(--color-card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 28px;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    /* Text links, Bild rechts */
+    grid-template-columns: 1.05fr .95fr;
     align-items: center;
     gap: 32px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, .08);
+    box-shadow: var(--box-shadow);
+    color: var(--color-text)
 }
 
 .promo__text {
-    padding: 48px 40px;
+    padding: 48px 40px
 }
 
 .promo__title {
@@ -27,49 +28,50 @@
     line-height: 1.1;
     font-weight: 800;
     margin: 0 0 14px;
+    color: var(--color-text)
 }
 
 .promo__desc {
     margin: 0 0 18px;
     color: var(--color-text-muted);
     font-size: 1.05rem;
-    max-width: 46ch;
+    max-width: 46ch
 }
 
 .promo__cta {
     border: 0;
     border-radius: 999px;
     padding: 12px 18px;
-    background: #111;
-    color: #fff;
+    background: var(--button-bg);
+    color: var(--button-fg);
     font-weight: 600;
     cursor: pointer;
-    transition: opacity .2s ease, transform .12s ease;
+    transition: opacity .2s ease, transform .12s ease
 }
 
 .promo__cta:hover {
     opacity: .95;
-    transform: translateY(-1px);
+    transform: translateY(-1px)
 }
 
 .promo__media {
     position: relative;
-    min-height: 300px;
+    min-height: 300px
 }
 
 .promo__media img {
     width: 100%;
     display: block;
     object-fit: cover;
-    height: 100%;
+    height: 100%
 }
 
-@media (max-width: 980px) {
+@media (max-width:980px) {
     .promo__inner {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr
     }
 
     .promo__text {
-        padding: 32px 24px;
+        padding: 32px 24px
     }
 }

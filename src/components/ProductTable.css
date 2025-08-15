@@ -1,99 +1,115 @@
 .product-table__wrap {
   width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, .06);
+  max-width: 1440px;
+  margin: 8px auto 0;
+  background: var(--color-card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, .06);
+  box-shadow: var(--box-shadow);
   overflow: hidden;
+  color: var(--color-text);
 }
 
 .product-table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
-  /* für .ellipsis */
+  table-layout: auto;
+  /* Spalten dürfen wachsen */
 }
 
 .product-table thead th {
   position: sticky;
   top: 0;
-  background: #f7f8fa;
+  background: var(--color-bg);
   color: var(--color-text);
   text-align: left;
   font-weight: 700;
   font-size: .95rem;
   padding: 14px 14px;
-  border-bottom: 1px solid #eceff3;
+  border-bottom: 1px solid var(--divider-color);
   z-index: 1;
 }
 
 .product-table td {
   padding: 12px 14px;
-  border-bottom: 1px solid #f1f3f5;
+  border-bottom: 1px solid var(--divider-color);
   vertical-align: middle;
   font-size: .95rem;
-  color: #222;
+  color: var(--color-text);
 }
 
 .product-table tr:last-child td {
-  border-bottom: 0;
+  border-bottom: 0
+}
+
+/* Grundsätzlich nicht umbrechen – außer bei den Textspalten */
+.product-table thead th,
+.product-table td {
+  white-space: nowrap
+}
+
+.product-table td:nth-child(2),
+.product-table td:nth-child(3) {
+  white-space: normal
 }
 
 .muted {
-  color: var(--color-text-muted);
+  color: var(--color-text-muted)
 }
 
 .strong {
-  font-weight: 600;
+  font-weight: 600
 }
 
-/* lange Beschreibungen elidieren */
 .ellipsis {
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis
 }
 
-/* Aktionen */
-.actions {
-  display: flex;
-  gap: 8px;
+/* Actions-Spalte ausreichend breit */
+.col-actions {
+  min-width: 220px
 }
 
+/* Buttons */
 .btn {
-  border: 1px solid rgba(0, 0, 0, .08);
-  background: #fff;
+  border: 1px solid var(--border-color);
+  background: var(--color-bg-alt);
   padding: 8px 10px;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: background .15s ease, color .15s ease;
+  transition: background .15s ease, color .15s ease, transform .12s ease;
+  color: var(--color-text);
+  margin-right: 8px;
 }
 
-.btn--light:hover {
-  background: #f3f4f6;
+.btn:hover {
+  background: var(--color-bg);
+  transform: translateY(-1px)
 }
 
 .btn--danger {
   background: #ff4c4c;
   color: #fff;
-  border: none;
+  border: none
 }
 
 .btn--danger:hover {
-  filter: brightness(.95);
+  filter: brightness(.95)
 }
 
-/* hübscher Toggle */
+/* Toggle */
 .switch {
   position: relative;
   display: inline-block;
   width: 42px;
-  height: 24px;
+  height: 24px
 }
 
 .switch input {
-  display: none;
+  display: none
 }
 
 .slider {
@@ -102,7 +118,7 @@
   inset: 0;
   background: #e5e7eb;
   transition: .2s;
-  border-radius: 999px;
+  border-radius: 999px
 }
 
 .slider:before {
@@ -115,20 +131,21 @@
   background: #fff;
   border-radius: 50%;
   transition: .2s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .2)
 }
 
 .switch input:checked+.slider {
-  background: var(--color-primary);
+  background: var(--color-primary)
 }
 
 .switch input:checked+.slider:before {
-  transform: translateX(18px);
+  transform: translateX(18px)
 }
 
+/* Mobile Fallback */
 @media (max-width: 760px) {
   .product-table thead {
-    display: none;
+    display: none
   }
 
   .product-table,
@@ -136,19 +153,20 @@
   .product-table tr,
   .product-table td {
     display: block;
-    width: 100%;
+    width: 100%
   }
 
   .product-table tr {
-    border-bottom: 1px solid #eceff3;
+    border-bottom: 1px solid var(--divider-color)
   }
 
   .product-table td {
     border: none;
     padding: 10px 14px;
+    white-space: normal
   }
 
-  .actions {
-    justify-content: flex-start;
+  .col-actions {
+    min-width: 0
   }
 }

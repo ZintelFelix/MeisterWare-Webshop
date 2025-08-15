@@ -1,24 +1,48 @@
 :root {
+  --border-color: rgba(0, 0, 0, .08);
+  --divider-color: #e5e7eb;
+  --button-bg: #111;
+  --button-fg: #fff;
+  --footer-bg: #f4f6f8;
+  --tone-neutral: var(--color-card-bg);
+  --tone-blush: #fbf1f1;
+  --tone-mint: #eef6f2;
   --color-primary: #0066ff;
   --color-primary-hover: #0051cc;
-
   --color-text: #111827;
   --color-text-muted: #6b7280;
-
   --color-bg: #f6f7f8;
   --color-bg-alt: #ffffff;
   --color-card-bg: #ffffff;
-
-  --border-radius: 20px; 
+  --border-radius: 20px;
   --spacing: 1rem;
-
-  --box-shadow: 0 12px 30px rgba(100,100,100,0.15);
+  --box-shadow: 0 12px 30px rgba(100, 100, 100, 0.15);
+  --nav-bg: rgba(255, 255, 255, 0.65);
+  --hero-grad-1: #f3ede9;
+  --hero-grad-2: #f8f6f5;
+  --hero-grad-3: #ffffff;
 }
 
-.page-container {
-  max-width: 1440px; /* vorher 1200px */
-  margin: 0 auto;
-  padding: 4rem 3rem; /* mehr horizontalen Puffer */
+[data-theme="dark"] {
+  --border-color: rgba(255, 255, 255, .12);
+  --divider-color: rgba(255, 255, 255, .12);
+  --button-bg: #e5e7eb;
+  --button-fg: #0f1216;
+  --footer-bg: #0f1318;
+  --tone-blush: #1c1517;
+  --tone-mint: #121a16;
+  --color-primary: #7aa2ff;
+  --color-primary-hover: #9bb8ff;
+  --color-text: #e5e7eb;
+  --color-text-muted: #9ca3af;
+  --color-bg: #0f1216;
+  --color-bg-alt: #11151b;
+  --color-card-bg: #141a22;
+  --box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+  --nav-bg: rgba(20, 24, 32, 0.7);
+  --hero-grad-1: #12161c;
+  --hero-grad-2: #10141a;
+  --hero-grad-3: #0f1216;
 }
 
 *,
@@ -29,19 +53,27 @@
   padding: 0;
 }
 
+html,
 body {
-  font-family: 'Sora', system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  background: #ededf1;
-}
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background .25s ease, color .25s ease;
 }
 
-h1, h2, h3, h4 {
+body {
+  font-family: 'Sora', system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+h1,
+h2,
+h3,
+h4 {
   margin-bottom: var(--spacing);
   color: var(--color-text);
+}
+
+a {
+  color: var(--color-primary);
 }
 
 button {
@@ -49,7 +81,14 @@ button {
   cursor: pointer;
 }
 
+.page-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+}
+
 @media (min-width: 1400px) {
+
   .page-container,
   .carousel-content,
   .overview__container {

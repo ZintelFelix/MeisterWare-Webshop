@@ -1,27 +1,29 @@
 .homepage {
   background: var(--color-bg);
-  padding: 0;
+  padding: 0
 }
 
 .order-list {
   display: grid;
   gap: var(--spacing);
-  padding: var(--spacing);
+  padding: var(--spacing)
 }
 
 .order-card {
-  background: var(--color-bg-alt);
+  background: var(--color-card-bg);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   padding: var(--spacing);
+  color: var(--color-text)
 }
 
 .order-card h3 {
   margin-bottom: var(--spacing);
-  color: var(--color-text);
+  color: var(--color-text)
 }
 
 .order-card p {
   color: var(--color-text-muted);
-  margin-bottom: calc(var(--spacing) * 0.5);
+  margin-bottom: calc(var(--spacing)*.5)
 }
