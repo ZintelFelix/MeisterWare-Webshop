@@ -2,15 +2,14 @@ import React, { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Sun, Moon, Search, Heart, User, ShoppingCart, PlusCircle } from "lucide-react";
 import { useTheme } from "../useTheme";
-import { useCart } from "../context/CartContext"; // ⬅️ Neu
+import { useCart } from "../context/CartContext";
 import "./NavBar.css";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const { theme, toggle } = useTheme();
-  const { cart } = useCart(); // ⬅️ Neu
+  const { cart } = useCart();
 
-  // Gesamtanzahl (Summe der Mengen) anzeigen
   const cartCount = useMemo(
     () => cart.reduce((sum, item) => sum + (item.quantity ?? 1), 0),
     [cart]
