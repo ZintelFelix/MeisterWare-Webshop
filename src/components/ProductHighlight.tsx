@@ -9,7 +9,7 @@ type Props = {
 };
 
 const ProductHighlight: React.FC<Props> = ({
-    ctaLabel = "Discover More",
+    ctaLabel = "Endecke mehr",
     imageUrl,
     onClick,
     tone = "neutral",

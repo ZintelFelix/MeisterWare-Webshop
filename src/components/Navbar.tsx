@@ -19,14 +19,14 @@ const Navbar: React.FC = () => {
         </div>
 
         <ul className="navbar-links">
-          <li onClick={() => navigate("/")}>Home</li>
-          <li onClick={() => navigate("/about")}>About</li>
+          <li onClick={() => navigate("/")}>Startseite</li>
+          <li onClick={() => navigate("/about")}>Über uns</li>
           <li onClick={() => navigate("/shop")}>Shop</li>
-          <li onClick={() => navigate("/faq")}>FAQ</li>
+          <li onClick={() => navigate("/faq")}>Häufige Fragen</li>
         </ul>
 
         <div className="navbar-right">
-          <button className="contact-pill" onClick={() => navigate("/contact")}>Contact Us</button>
+          <button className="contact-pill" onClick={() => navigate("/contact")}>Kontakt</button>
           <div className="navbar-buttons">
             <button onClick={toggle} aria-label="Theme" title="Theme">
               {theme === "dark" ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}

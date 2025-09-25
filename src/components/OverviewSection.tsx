@@ -5,23 +5,23 @@ import { Truck, DollarSign, Headphones, CreditCard } from 'lucide-react';
 const features = [
     {
         Icon: Truck,
-        title: 'Free Shipping & Return',
-        subtitle: 'Free shipping on all orders over $99.',
+        title: 'Kostenloser Versand & Rückgabe',
+        subtitle: 'Kostenloser Versand für alle Bestellungen über 99€',
     },
     {
         Icon: DollarSign,
-        title: 'Money Back Guarantee',
-        subtitle: '100% money back guarantee.',
+        title: 'Geld-zurück-Garantie',
+        subtitle: '100% Geld-zurück-Garantie',
     },
     {
         Icon: Headphones,
         title: 'Online Support 24/7',
-        subtitle: 'Help center & support.',
+        subtitle: 'Hilfecenter & Support.',
     },
     {
         Icon: CreditCard,
-        title: 'Secure Payment',
-        subtitle: 'All cards accepted.',
+        title: 'Sichere Zahlung',
+        subtitle: 'Alle Karten werden akzeptiert.',
     },
 ];
 

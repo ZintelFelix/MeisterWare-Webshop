@@ -44,7 +44,7 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({ products }) => {
                                     className="carousel-button"
                                     onClick={() => navigate(`/product/${product.id}`)}
                                 >
-                                    Discover More
+                                    Endecke mehr
                                 </button>
                             </div>
 
@@ -63,7 +63,7 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({ products }) => {
                                 onClick={() => navigate(`/product/${product.id}`)}
                                 style={{ padding: "8px 14px", borderRadius: 12 }}
                             >
-                                View
+                                Details
                             </button>
                         </div>
                     </div>
