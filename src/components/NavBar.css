@@ -122,6 +122,37 @@
   outline: 2px solid var(--color-primary);
 }
 
+/* --- Cart Badge (neu) --- */
+.cart-btn {
+  position: relative;
+  /* Referenz für Badge-Position */
+}
+
+.cart-badge {
+  position: absolute;
+  top: -2px;
+  /* feinjustierbar */
+  right: -2px;
+  /* feinjustierbar */
+  transform: translate(35%, -35%);
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+  font-size: 0.72rem;
+  line-height: 1;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Kleinere Bildschirme: etwas dichter an das Icon */
 @media (max-width: 820px) {
   .navbar {
     grid-template-columns: 1fr auto;
@@ -133,5 +164,11 @@
 
   .contact-pill {
     display: none;
+  }
+
+  .cart-badge {
+    top: -4px;
+    right: -4px;
+    transform: translate(50%, -50%);
   }
 }

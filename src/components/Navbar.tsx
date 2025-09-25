@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Sun, Moon, Search, Heart, User, ShoppingCart, PlusCircle } from "lucide-react";
 import { useTheme } from "../useTheme";
+import { useCart } from "../context/CartContext"; // ⬅️ Neu
 import "./NavBar.css";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const { theme, toggle } = useTheme();
+  const { cart } = useCart(); // ⬅️ Neu
+
+  // Gesamtanzahl (Summe der Mengen) anzeigen
+  const cartCount = useMemo(
+    () => cart.reduce((sum, item) => sum + (item.quantity ?? 1), 0),
+    [cart]
+  );
 
   return (
     <div className="nav-wrap">
@@ -27,24 +35,41 @@ const Navbar: React.FC = () => {
 
         <div className="navbar-right">
           <button className="contact-pill" onClick={() => navigate("/contact")}>Kontakt</button>
+
           <div className="navbar-buttons">
             <button onClick={toggle} aria-label="Theme" title="Theme">
               {theme === "dark" ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
             </button>
+
             <button onClick={() => navigate("/admin")} aria-label="Admin" title="Admin-Item Manager">
               <PlusCircle className="w-6 h-6" aria-hidden="true" />
             </button>
+
             <button onClick={() => navigate("/search")} aria-label="Suche" title="Search">
               <Search className="w-6 h-6" aria-hidden="true" />
             </button>
+
             <button onClick={() => navigate("/wishlist")} aria-label="Wishlist" title="Saved">
               <Heart className="w-6 h-6" aria-hidden="true" />
             </button>
+
             <button onClick={() => navigate("/account")} aria-label="Account" title="Account">
               <User className="w-6 h-6" aria-hidden="true" />
             </button>
-            <button onClick={() => navigate("/cart")} aria-label="Warenkorb" title="Cart">
+
+            {/* Warenkorb mit Badge */}
+            <button
+              className="cart-btn"
+              onClick={() => navigate("/cart")}
+              aria-label={cartCount > 0 ? `Warenkorb (${cartCount} Artikel)` : "Warenkorb"}
+              title="Cart"
+            >
               <ShoppingCart className="w-6 h-6" aria-hidden="true" />
+              {cartCount > 0 && (
+                <span className="cart-badge" aria-hidden="true">
+                  {cartCount > 99 ? "99+" : cartCount}
+                </span>
+              )}
             </button>
           </div>
         </div>
