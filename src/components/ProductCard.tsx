@@ -5,18 +5,15 @@ import "./ProductCard.css";
 
 type Props = { product: Product; onClick?: (p: Product) => void };
 
+const formatCurrency = (v: number) =>
+    new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(v);
+
 const ProductCard: React.FC<Props> = ({ product, onClick }) => {
     const { addToCart } = useCart();
     const stars = Math.round(product.rating || 0);
 
     return (
-        <article
-            className="product-card"
-            role="button"
-            tabIndex={0}
-            onClick={() => onClick?.(product)}
-            onKeyDown={(e) => e.key === "Enter" && onClick?.(product)}
-        >
+        <article className="product-card" onClick={() => onClick?.(product)}>
             <div className="product-card__media">
                 <img src={product.imageUrl} alt={product.name} loading="lazy" />
                 {product.category && <span className="product-card__chip">{product.category}</span>}
@@ -24,11 +21,10 @@ const ProductCard: React.FC<Props> = ({ product, onClick }) => {
 
             <div className="product-card__body">
                 <h3 className="product-card__title">{product.name}</h3>
+
                 {product.description && (
                     <p className="product-card__desc">
-                        {product.description.length > 120
-                            ? product.description.slice(0, 117) + "…"
-                            : product.description}
+                        {product.description.length > 120 ? product.description.slice(0, 117) + "…" : product.description}
                     </p>
                 )}
 
@@ -41,7 +37,7 @@ const ProductCard: React.FC<Props> = ({ product, onClick }) => {
                         )}
                     </div>
 
-                    <div className="product-card__price">€{product.price.toFixed(2)}</div>
+                    <div className="product-card__price">{formatCurrency(product.price)}</div>
                 </div>
 
                 <button
@@ -56,7 +52,7 @@ const ProductCard: React.FC<Props> = ({ product, onClick }) => {
                             quantity: 1,
                             imageUrl: product.imageUrl,
                             category: product.category,
-                            rating: product.rating,
+                            rating: product.rating
                         });
                     }}
                 >
