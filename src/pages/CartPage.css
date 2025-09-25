@@ -1,18 +1,12 @@
-/* ----- Feste Spacer-Höhe nur für die CartPage (kein Navbar-Code nötig) ----- */
 :root {
-  /* Falls deine Navbar optisch höher/tiefer ist, hier justieren */
   --nav-offset-y: 36px;
-  /* entspricht dem .navbar{ top:36px } */
   --nav-height: 64px;
-  /* geschätzte Navbar-Höhe inkl. Shadow/Spacing */
 }
 
-/* 1) Hard-guard: zusätzlicher Spacer im DOM */
 .navbar-spacer {
   height: calc(var(--nav-offset-y) + var(--nav-height));
 }
 
-/* 2) Soft-guard: extra Padding, falls andere Styles reingrätschen */
 .page--with-navbar-gap {
   padding-top: calc(var(--nav-offset-y) + var(--nav-height));
 }
@@ -24,7 +18,6 @@
   }
 }
 
-/* ----- Seitenrahmen & Titel ----- */
 .cart.page-container {
   max-width: 1440px;
   margin: 0 auto;
@@ -35,11 +28,9 @@
   font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   font-weight: 800;
   margin: 8px 0 20px;
-  /* kleiner, weil der Spacer darüber schon Platz schafft */
   color: var(--color-text);
 }
 
-/* ----- Layout: Liste + Summary-Card ----- */
 .cart__grid {
   display: grid;
   grid-template-columns: 1.4fr .6fr;
@@ -53,7 +44,6 @@
   }
 }
 
-/* ----- Listenkarten (Card-Look) ----- */
 .cart-list {
   list-style: none;
   margin: 0;
@@ -115,7 +105,6 @@
   gap: 8px;
 }
 
-/* ----- Summary-Card ----- */
 .cart-summary__card {
   background: var(--color-card-bg);
   border: 1px solid var(--border-color);
@@ -169,7 +158,6 @@
   flex-wrap: wrap;
 }
 
-/* ----- Buttons ----- */
 .btn {
   border: 1px solid var(--border-color);
   background: var(--color-bg-alt);
@@ -205,7 +193,6 @@
   border: 1px solid var(--border-color);
 }
 
-/* ----- Empty State ----- */
 .cart-empty {
   margin: 24px 0 40px;
 }
